@@ -1,10 +1,14 @@
 <?php
+include ('TransferStudent.php');
 //TODO: send the current year this way when you instantiate an object
 //$year = (new DateTime)->format("Y");
+//$transferStudent = new TransferStudent();
 
 
 class TransferStudentAdapter implements NewStudentInterface
 {
+    //aggregate();
+    //$transferStudent = new TransferStudent();
 
     private $firstName;
     private $lastName;
