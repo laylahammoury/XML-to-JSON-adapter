@@ -3,7 +3,7 @@
 //$year = (new DateTime)->format("Y");
 
 
-class NewStudent
+class TransferStudentAdapter
 {
 
     private $firstName;
