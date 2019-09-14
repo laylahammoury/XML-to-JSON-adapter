@@ -3,7 +3,7 @@
 //$year = (new DateTime)->format("Y");
 
 
-class TransferStudentAdapter
+class TransferStudentAdapter implements NewStudentInterface
 {
 
     private $firstName;
@@ -43,5 +43,8 @@ class TransferStudentAdapter
     public function getSpecialization() {return $this->specialization;}
 
 
-
+    public function getInfo()
+    {
+        // TODO: Implement getInfo() method.
+    }
 }
