@@ -12,6 +12,19 @@ class TransferStudent
     private $passedHours;
     private $specialization;
 
+   //constructor
+    public function __construct($firstName, $lastName, $ID, $entryYear, $graduationYear, $GPA, $passedHours, $specialization)
+    {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->ID = $ID;
+        $this->entryYear = $entryYear;
+        $this->graduationYear = $graduationYear;
+        $this->GPA = $GPA;
+        $this->passedHours = $passedHours;
+        $this->specialization = $specialization;
+    }
+
     //setters
     public function setFirstName($firstName)          {$this->firstName = $firstName;}
     public function setLastName($lastName)            {$this->lastName = $lastName;}
