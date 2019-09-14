@@ -7,19 +7,17 @@ class TransferStudent
     private $lastName;
     private $ID;
     private $entryYear;
-    private $graduationYear;
     private $GPA;
     private $passedHours;
     private $specialization;
 
    //constructor
-    public function __construct($firstName, $lastName, $ID, $entryYear, $graduationYear, $GPA, $passedHours, $specialization)
+    public function __construct($firstName, $lastName, $ID, $entryYear, $GPA, $passedHours, $specialization)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->ID = $ID;
         $this->entryYear = $entryYear;
-        $this->graduationYear = $graduationYear;
         $this->GPA = $GPA;
         $this->passedHours = $passedHours;
         $this->specialization = $specialization;
@@ -30,7 +28,6 @@ class TransferStudent
     public function setLastName($lastName)            {$this->lastName = $lastName;}
     public function setID($ID)                        {$this->ID = $ID;}
     public function setEntryYear($entryYear)          {$this->entryYear = $entryYear;}
-    public function setGraduationYear($graduationYear){$this->graduationYear = $graduationYear;}
     public function setGPA($GPA)                      {$this->GPA = $GPA;}
     public function setPassedHours($passedHours)      {$this->passedHours = $passedHours;}
     public function setSpecialization($specialization){$this->specialization = $specialization;}
@@ -41,7 +38,6 @@ class TransferStudent
     public function getLastName()       {return $this->lastName;}
     public function getID()             {return $this->ID;}
     public function getEntryYear()      {return $this->entryYear;}
-    public function getGraduationYear() {return $this->graduationYear;}
     public function getGPA()            {return $this->GPA;}
     public function getPassedHours()    {return $this->passedHours;}
     public function getSpecialization() {return $this->specialization;}
