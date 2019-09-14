@@ -42,5 +42,18 @@ class TransferStudent
     public function getPassedHours()    {return $this->passedHours;}
     public function getSpecialization() {return $this->specialization;}
 
-    public function getInfo(){}
+    public function getInfo()
+    {
+        $xml = new SimpleXMLElement('<xml/>');
+        $student = $xml->addChild('student');
+        $student->addChild('firstName', $this->firstName);
+        $student->addChild('lastName', $this->lastName);
+        $student->addChild('ID', $this->ID);
+        $student->addChild('entryYear', $this->entryYear);
+        $student->addChild('passedHours', $this->passedHours);
+        $student->addChild('specialization', $this->specialization);
+
+        print($xml->asXML());
+        return $xml->asXML();
+    }
 }
