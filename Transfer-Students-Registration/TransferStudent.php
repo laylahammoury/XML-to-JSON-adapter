@@ -46,14 +46,14 @@ class TransferStudent
     {
         $xml = new SimpleXMLElement('<xml/>');
         $student = $xml->addChild('student');
-        $student->addChild('firstName', $this->firstName);
-        $student->addChild('lastName', $this->lastName);
-        $student->addChild('ID', $this->ID);
-        $student->addChild('entryYear', $this->entryYear);
-        $student->addChild('passedHours', $this->passedHours);
+        $student->addChild('first-name', $this->firstName);
+        $student->addChild('last-name', $this->lastName);
+        $student->addChild('id', $this->ID);
+        $student->addChild('entry-year', $this->entryYear);
+        $student->addChild('passed-hours', $this->passedHours);
         $student->addChild('specialization', $this->specialization);
 
-        print($xml->asXML());
+        //print ($xml->asXML());
         return $xml->asXML();
     }
 }
