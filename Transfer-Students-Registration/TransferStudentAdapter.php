@@ -1,14 +1,8 @@
 <?php
 include ('TransferStudent.php');
-//TODO: send the current year this way when you instantiate an object
-//$year = (new DateTime)->format("Y");
-//$transferStudent = new TransferStudent();
-
 
 class TransferStudentAdapter implements NewStudentInterface
 {
-    //aggregate();
-    //$transferStudent = new TransferStudent();
 
     private $firstName;
     private $lastName;
@@ -17,18 +11,24 @@ class TransferStudentAdapter implements NewStudentInterface
     private $ID;
     private $acceptedHours;
     private $specialization;
+    private $transfer;
+
 
     //constructor
-    public function __construct($firstName, $lastName, $entryYear, $acceptedHours, $specialization)
-    {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->entryYear = $entryYear;
+    public function __construct($transfer, $acceptedHours, $specialization){
+        $this->transfer = $transfer;
         $this->acceptedHours = $acceptedHours;
         $this->specialization = $specialization;
         $this->fullName = $this->firstName ." ". $this->lastName;
         $this->ID = $this->lastName[0]. $this->firstName. $this->entryYear;
     }
+
+
+//        $this->firstName = $firstName;
+//        $this->lastName = $lastName;
+//        $this->entryYear = $entryYear;
+
+
 
     //setters
     public function setFirstName($firstName)           {$this->firstName = $firstName;}
