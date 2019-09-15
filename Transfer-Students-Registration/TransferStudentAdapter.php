@@ -19,8 +19,11 @@ class TransferStudentAdapter implements NewStudentInterface
         $this->transfer = $transfer;
         $this->acceptedHours = $acceptedHours;
         $this->specialization = $specialization;
-        $this->fullName = $this->firstName ." ". $this->lastName;
-        $this->ID = $this->lastName[0]. $this->firstName. $this->entryYear;
+
+        //adapter should'nt have fname and lname, it should only tke a transferStudent and take the info from it.
+        //$this->fullName = $this->transfer->getFirstName(); ." ". $this->lastName;
+        //$this->ID = $this->lastName[0]. $this->firstName. $this->entryYear;
+        //$this->firstName = $firstName;
     }
 
 
