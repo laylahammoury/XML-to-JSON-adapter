@@ -1,5 +1,6 @@
 <?php
-include ('TransferStudent.php');
+include_once ('TransferStudent.php');
+include_once ('NewStudentInterface.php');
 
 class TransferStudentAdapter implements NewStudentInterface
 {
@@ -16,10 +17,13 @@ class TransferStudentAdapter implements NewStudentInterface
 
     //constructor
     public function __construct($transfer, $acceptedHours, $specialization){
-        $this->transfer = $transfer;
+        $this->transfer = new TransferStudent($transfer);
+        $var = new TransferStudent();
+        print($transfer->getFirstname());
         $this->acceptedHours = $acceptedHours;
         $this->specialization = $specialization;
-
+        $transferInfoFile = $transfer->getInf();
+        $xml_info = simplexml_load_file($transferInfoFile);
         //adapter should'nt have fname and lname, it should only tke a transferStudent and take the info from it.
         //$this->fullName = $this->transfer->getFirstName(); ." ". $this->lastName;
         //$this->ID = $this->lastName[0]. $this->firstName. $this->entryYear;
