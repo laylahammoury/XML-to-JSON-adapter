@@ -22,7 +22,6 @@ class TransferStudentAdapter implements NewStudentInterface
         $this->specialization = $specialization;
         $xml_info = simplexml_load_file( 'tempXML.xml' );
         foreach($xml_info->children() as $student) {
-            print( $student->id);
             $this->firstName = $student->first_name;
             $this->lastName = $student->last_name;
             $this->fullName =$this->firstName." " .$this->lastName;
