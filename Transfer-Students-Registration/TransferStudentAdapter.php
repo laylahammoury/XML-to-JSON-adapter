@@ -20,22 +20,16 @@ class TransferStudentAdapter implements NewStudentInterface
         $this->transfer = clone $transferComming;
         $this->acceptedHours = $acceptedHours;
         $this->specialization = $specialization;
-        $transferInfoFile = $this->transfer->getInfo();
-        print($transferInfoFile);
-        die();
-        $xml_info = simplexml_load_file( $transferInfoFile);
-        //adapter should'nt have fname and lname, it should only tke a transferStudent and take the info from it.
-        //$this->fullName = $this->transfer->getFirstName(); ." ". $this->lastName;
-        //$this->ID = $this->lastName[0]. $this->firstName. $this->entryYear;
-        //$this->firstName = $firstName;
+        $xml_info = simplexml_load_file( 'tempXML.xml' );
+        foreach($xml_info->children() as $student) {
+            print( $student->id);
+            $this->firstName = $student->first_name;
+            $this->lastName = $student->last_name;
+            $this->fullName =$this->firstName." " .$this->lastName;
+            $this->entryYear =$student->entry_year;
+            $this->ID =$student->id;
+        }
     }
-
-
-//        $this->firstName = $firstName;
-//        $this->lastName = $lastName;
-//        $this->entryYear = $entryYear;
-
-
 
     //setters
     public function setFirstName($firstName)           {$this->firstName = $firstName;}
