@@ -46,11 +46,11 @@ class TransferStudent
     {
         $xml = new SimpleXMLElement('<xml/>');
         $student = $xml->addChild('student');
-        $student->addChild('first-name', $this->firstName);
-        $student->addChild('last-name', $this->lastName);
+        $student->addChild('first_name', $this->firstName);
+        $student->addChild('last_name', $this->lastName);
         $student->addChild('id', $this->ID);
-        $student->addChild('entry-year', $this->entryYear);
-        $student->addChild('passed-hours', $this->passedHours);
+        $student->addChild('entry_year', $this->entryYear);
+        $student->addChild('passed_hours', $this->passedHours);
         $student->addChild('specialization', $this->specialization);
 
         //saves the info of student in this temp file
