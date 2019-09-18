@@ -53,7 +53,9 @@ class TransferStudent
         $student->addChild('passed-hours', $this->passedHours);
         $student->addChild('specialization', $this->specialization);
 
-        //print ($xml->asXML());
-        return $xml->asXML();
+        //saves the info of student in this temp file
+        $my_file = "tempXML.xml ";
+        return $xml->saveXML($my_file);
+
     }
 }
