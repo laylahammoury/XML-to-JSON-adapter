@@ -17,14 +17,13 @@ class TransferStudentAdapter implements NewStudentInterface
 
     //constructor
     public function __construct($transferComming, $acceptedHours, $specialization){
-        $this->transfer = new TransferStudent();
-        $this->transfer = $transferComming;
-        $var = new TransferStudent();
-        print($this->transfer-$this->getInfo());
+        $this->transfer = clone $transferComming;
         $this->acceptedHours = $acceptedHours;
         $this->specialization = $specialization;
         $transferInfoFile = $this->transfer->getInfo();
-        $xml_info = simplexml_load_file($transferInfoFile);
+        print($transferInfoFile);
+        die();
+        $xml_info = simplexml_load_file( $transferInfoFile);
         //adapter should'nt have fname and lname, it should only tke a transferStudent and take the info from it.
         //$this->fullName = $this->transfer->getFirstName(); ." ". $this->lastName;
         //$this->ID = $this->lastName[0]. $this->firstName. $this->entryYear;
